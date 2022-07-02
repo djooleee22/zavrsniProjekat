@@ -1,0 +1,12 @@
+#home-page {
+    .grid-wrapper {
+        width: 1000px;
+        margin: 0 auto;
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        gap: 15px;
+        justify-content: center;
+        align-items: center;
+        
+    }
+}
