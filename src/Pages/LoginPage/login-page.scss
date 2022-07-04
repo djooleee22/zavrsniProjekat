@@ -36,6 +36,11 @@ $blue-color-lighter:rgb(18, 194, 243);
             text-align: center;
 
             .left{
+                //animacija levo
+                // position: relative;
+                // animation-name: left;
+                // animation-duration: 4s;
+
                 .logo{
                     width: 100px;
                 }
@@ -66,6 +71,14 @@ $blue-color-lighter:rgb(18, 194, 243);
             position: relative;
 
             .right{
+<<<<<<< HEAD
+=======
+                //animacija
+                // position: relative;
+                // animation-name: right;
+                // animation-duration: 4s;
+                // width: 100%;
+>>>>>>> bed37270446997ebc73171b360f34e21c58ac3e0
 
                 h2{
                     text-align: center;
@@ -212,3 +225,22 @@ $blue-color-lighter:rgb(18, 194, 243);
         } 
     }
 }
+<<<<<<< HEAD
+=======
+
+// @keyframes left {
+//     0%   {left:0px; top:0px;}
+//     25%  {left:500px; top:0px;}
+//     50%   {left:0px; top:0px;}
+//     75% {left:500px; top:0px;}
+//     100%{left:0px; top:0px;}
+//   }
+  
+//   @keyframes right{
+//     0%   {right:0px; top:0px;}
+//     25%  { right:500px; top:0px;}
+//     50%   {right:0px; top:0px;}
+//     75% {right:500px; top:0px;}
+//     100%{right:0px; top:0px;}
+//   }
+>>>>>>> bed37270446997ebc73171b360f34e21c58ac3e0

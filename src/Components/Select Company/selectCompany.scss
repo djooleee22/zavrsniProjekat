@@ -1,0 +1,27 @@
+#select-company{
+    padding: 0 305px;
+    .flex-wrap {
+        color: white;
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 25px;
+        
+    }
+
+    .btn-wrap{
+        display: flex;
+        justify-content: space-between;
+        margin-top: 25px;
+    }
+
+    .companies {
+        list-style: none;
+        color: white;
+        border: 1px solid white;
+        padding: 5px;
+
+        li {
+            margin-bottom: 10px;
+        }
+     }
+}
