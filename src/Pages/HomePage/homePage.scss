@@ -1,7 +1,8 @@
-
+$border-radius: 5px;
+$beige-color: rgba(245, 245, 220, 0.904);
 #home-page {
     .grid-wrapper {
-        padding: 100px 150px;
+        padding: 50px 150px;
         width: 1000px;
         margin: 0 auto;
         display: grid;
@@ -11,16 +12,19 @@
         align-items: center;
         
     }
+
+    .search-bar{
+        display: flex;
+        justify-content: center;
+        margin-top: 50px;
+        input{
+            color: black;
+            background-color:  $beige-color;
+            width: 27%;
+            padding: 10px 10px;
+            outline: none;
+            border: none;
+            border-radius: $border-radius;
+        }
 }
-.search-bar{
-    display: flex;
-    justify-content: end;
-    margin-right: 100px;
-    margin-top: 50px;
-
-
-    input{
-        padding: 10px 10px;
-
-    }
 }

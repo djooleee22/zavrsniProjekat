@@ -3,4 +3,35 @@
     height: 250px;
     width: 250px;
     border-radius: 5px;
+    padding: 20px;
+    cursor: pointer;
+    transition: all 0.4s;
+
+    .flex {
+        display: flex;
+        align-items: center;
+        gap: 30px;
+        margin-bottom: 20px;
+        img {
+            width: 40%;
+        }
+        h2 {
+            border-left: 1px solid orange;
+            padding-left: 10px;
+        }
+    }
+
+    .wrap-info{
+        display: flex;
+        flex-direction: column;  
+        align-items: center;      
+        
+        h4 {
+            margin-top: 10px;
+            margin-bottom: 10px;
+        }
+    }
+    &:hover {
+        transform: scale(1.05);
+    }
 }
