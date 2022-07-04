@@ -1,3 +1,28 @@
 #header {
-    background-color: orange;
+    background-color: #FFA500;
+    padding: 10px;
+    background: #1C41CE;
+    background: -moz-linear-gradient(top, #1C41CE 0%, #A46813 50%, #C59237 100%);
+    background: -webkit-linear-gradient(top, #1C41CE 0%, #A46813 50%, #C59237 100%);
+    background: linear-gradient(to bottom, #1C41CE 0%, #A46813 50%, #C59237 100%);
+    display: flex;
+    justify-content: space-between;
+}
+
+.ourLogo {
+    width: 30px;
+    border-left: 3px solid black;
+    border-bottom: 2px solid black;
+}
+
+.navBar{
+    display: flex;
+    justify-content: space-between;
+
+    a {
+        padding: 0 20px;
+        color: black;
+        border-left: 1px solid black;
+    }
+
 }

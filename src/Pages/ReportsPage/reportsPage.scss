@@ -1,0 +1,30 @@
+body {
+    height: 100vh;
+}
+
+.report{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
+}
+
+.reports-list {
+    height: 700px;
+    width: 800px;
+    background-color: yellowgreen; 
+    margin-bottom: 30px;
+}
+
+.info{
+    display: flex;
+    justify-content: space-between;
+    padding: 20px 0;
+    border: 1px solid black;
+}
+
+input {
+    border-radius: 5px;
+    margin: 30px 0;
+}
