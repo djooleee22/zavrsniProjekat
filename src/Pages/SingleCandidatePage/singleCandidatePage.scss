@@ -1,3 +1,50 @@
 #single-candidate-page {
     background-color: green;
 }
+
+body{
+    height: 100vh;
+}
+
+
+ #footer{
+     height: 30px;
+}
+.candidate-details{
+    display: flex;
+    justify-content: center;
+    
+}
+
+.candidate-box{
+    height: 700px;
+    width: 1000px;
+    background-color: yellow;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: column;
+}
+
+.candidate-box >img{
+    margin-top: 50px;
+    border-radius: 50%;
+    height: 200px;
+    display: flex;
+
+}
+.info-details{
+    text-align: center;
+    margin-top: 30px;
+}
+table{
+    border: 1px solid green;
+    width: 700px;
+}
+td{
+    border: 1px solid green;
+    padding: 5px;
+}
+.reports > h2{
+    margin-bottom: 30px;
+}
