@@ -5,7 +5,7 @@ import "./reportsPage.scss";
 
 function ReportsPage(props) {
   return (
-    <div>
+    <div id="reports-page">
       <Header />
       <div className="report">
         <div className="reports-component">
