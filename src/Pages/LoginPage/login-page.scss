@@ -37,9 +37,9 @@ $blue-color-lighter:rgb(18, 194, 243);
 
             .left{
                 //animacija levo
-                position: relative;
-                animation-name: left;
-                animation-duration: 4s;
+                // position: relative;
+                // animation-name: left;
+                // animation-duration: 4s;
 
                 .logo{
                     width: 100px;
@@ -72,10 +72,10 @@ $blue-color-lighter:rgb(18, 194, 243);
 
             .right{
                 //animacija
-                position: relative;
-                animation-name: right;
-                animation-duration: 4s;
-                width: 100%;
+                // position: relative;
+                // animation-name: right;
+                // animation-duration: 4s;
+                // width: 100%;
 
                 h2{
                     text-align: center;
@@ -223,18 +223,18 @@ $blue-color-lighter:rgb(18, 194, 243);
     }
 }
 
-@keyframes left {
-    0%   {left:0px; top:0px;}
-    25%  {left:500px; top:0px;}
-    50%   {left:0px; top:0px;}
-    75% {left:500px; top:0px;}
-    100%{left:0px; top:0px;}
-  }
+// @keyframes left {
+//     0%   {left:0px; top:0px;}
+//     25%  {left:500px; top:0px;}
+//     50%   {left:0px; top:0px;}
+//     75% {left:500px; top:0px;}
+//     100%{left:0px; top:0px;}
+//   }
   
-  @keyframes right{
-    0%   {right:0px; top:0px;}
-    25%  { right:500px; top:0px;}
-    50%   {right:0px; top:0px;}
-    75% {right:500px; top:0px;}
-    100%{right:0px; top:0px;}
-  }
+//   @keyframes right{
+//     0%   {right:0px; top:0px;}
+//     25%  { right:500px; top:0px;}
+//     50%   {right:0px; top:0px;}
+//     75% {right:500px; top:0px;}
+//     100%{right:0px; top:0px;}
+//   }

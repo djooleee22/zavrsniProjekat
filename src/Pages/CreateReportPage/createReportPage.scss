@@ -1,0 +1,16 @@
+#create-report-page {
+    .buttons {
+        width: 800px;
+        margin: 50px auto;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 25px;
+    }
+    a {
+        padding: 5px 10px;
+        cursor: pointer;
+        color: white;
+        text-decoration: none;
+    }
+}
