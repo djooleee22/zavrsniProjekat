@@ -1,4 +1,5 @@
 #candidate-card {
+
     background-color: beige;
     height: 250px;
     width: 250px;
@@ -6,6 +7,9 @@
     padding: 20px;
     cursor: pointer;
     transition: all 0.4s;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 
     .flex {
         display: flex;
@@ -33,5 +37,18 @@
     }
     &:hover {
         transform: scale(1.05);
+    }
+    a{
+        text-decoration: none;
+        padding: 5px 10px;
+        color: black;
+        margin-top: 10px;
+        background-color: orangered;
+        color: white;
+        border-radius: 10px;
+
+        &:hover{
+            background-color: rgb(245, 121, 38);
+        }
     }
 }

@@ -6,8 +6,8 @@ import {Link} from "react-router-dom"
 function CandidateCard (props) {
     const data = useContext(appCtx);
 
-    console.log(data.candidatesList);
-
+    // console.log(data);
+    if(!props.podaci) return null;
     return <div id="candidate-card">
         <div className="flex">
             <img src="https://freesvg.org/img/user1.png" alt="user" />

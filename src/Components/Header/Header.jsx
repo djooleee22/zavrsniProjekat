@@ -9,7 +9,7 @@ function Header () {
 
 
         <div className="navBar">
-            <a href="">Back To Home</a>
+            <a href="">Home</a>
             <a href="">Report</a>
             <a href="">Create Report</a>
         </div>

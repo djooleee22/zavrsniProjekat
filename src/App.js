@@ -12,7 +12,6 @@ function App() {
   const [candidatesList, setCandidatesList] = useState([]);
   const [companiesList, setCompaniesList] = useState([]);
   const [reportsList, setReportsList] = useState([]);
-  const [candidateInfo, setCandidateInfo] = useState({});
 
   function fetchData() {
     fetch("http://localhost:3333/664/api/candidates")
@@ -40,8 +39,6 @@ function App() {
             candidatesList,
             reportsList,
             companiesList,
-            setCandidateInfo,
-            candidateInfo,
           }}
         >
           <Route exact path="/">
