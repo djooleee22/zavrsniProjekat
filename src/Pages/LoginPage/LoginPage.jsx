@@ -32,12 +32,12 @@ function LoginPage(props) {
                     <div className="right">
                         <h2>Sign in</h2>
                         <div className="text-field">
-                            <input type="text"/>
+                            <input type="text" required/>
                             <span></span>
                             <label>Username</label>
                         </div>
                         <div className="text-field">
-                            <input type="password" />
+                            <input type="password" required />
                             <span></span>
                             <label>Password</label>
                         </div>

@@ -1,3 +1,24 @@
 #header {
-    background-color: orange;
+    background-color:orangered;
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+
+    .ourLogo {
+        width: 30px;
+        border-left: 3px solid black;
+        border-bottom: 2px solid black;
+    }
+    
+    .navBar{
+        display: flex;
+        justify-content: space-between;
+    
+        a {
+            padding: 0 20px;
+            color: black;
+            border-left: 1px solid black;
+        }
+    }
 }
+
