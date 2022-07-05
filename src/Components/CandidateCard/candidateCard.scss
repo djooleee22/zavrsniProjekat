@@ -3,7 +3,7 @@
     background-color: beige;
     height: 250px;
     width: 250px;
-    border-radius: 5px;
+    border-radius: 8px;
     padding: 20px;
     cursor: pointer;
     transition: all 0.4s;
@@ -34,21 +34,21 @@
             margin-top: 10px;
             margin-bottom: 10px;
         }
-    }
-    &:hover {
-        transform: scale(1.05);
+        p {
+            margin-bottom: 10px;
+        }
     }
     a{
         text-decoration: none;
-        padding: 5px 10px;
+        padding: 5px 25px;
         color: black;
         margin-top: 10px;
-        background-color: orangered;
+        background-color: #010168de;
         color: white;
-        border-radius: 10px;
+        border-radius: 8px;
 
         &:hover{
-            background-color: rgb(245, 121, 38);
+            color: rgb(165, 164, 164);
         }
     }
 }

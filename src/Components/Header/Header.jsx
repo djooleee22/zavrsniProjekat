@@ -1,6 +1,7 @@
 import React from "react";
 import "./header.scss";
-import Logo from '../../images/logo.png'
+import Logo from '../../images/logo.png';
+import {Link} from "react-router-dom";
 
 
 function Header () {
@@ -9,9 +10,9 @@ function Header () {
 
 
         <div className="navBar">
-            <a href="">Home</a>
-            <a href="">Report</a>
-            <a href="">Create Report</a>
+            <Link to="/home-page">Home</Link>
+            <Link to="/reports-page">Reports</Link>
+            <Link to="/create-report-page">Create Report</Link>
         </div>
     </div>
 }

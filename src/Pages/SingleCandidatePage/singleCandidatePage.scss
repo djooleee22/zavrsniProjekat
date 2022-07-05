@@ -1,3 +1,82 @@
 #single-candidate-page {
-    color: white;
+    .wrap-main{
+        padding: 50px 0;
+        width: 60%;
+        margin: 0 auto;
+        .main {
+            display: flex;
+            align-items: center;
+            color: rgb(255, 255, 255);
+            padding: 30px 50px;
+            min-height: 86vh;
+            justify-content: center;
+            background-color: rgba(255, 255, 255, 0.856);
+            border-radius: 20px;
+            color: black;   
+            .flex {
+                width: 40%;
+                display: flex;
+                flex-direction: column;
+                gap: 30px;
+                .wrapper {
+                    padding-left: 20px;
+                    display: flex;
+                    flex-direction: column;
+                    gap: 15px;
+                    h2{
+                        font-size: 28px;
+                        margin-bottom: 20px;
+                    }
+                    p{
+                        font-size: 20px;
+                    }
+                }
+            }
+            img {
+                width: 80%;
+            }
+            .table {
+                background-color: white;
+                width: 60%;
+                border-spacing: 20px;
+                border-collapse: collapse;
+                border-radius: 8px !important;
+                box-shadow: 0px 15px 15px -11px rgba(0,0,0,0.6);
+
+
+                .heading-row {
+                    background-color: #094166 !important;
+                    color: white;
+                    display: flex;
+                    width: 100%;
+                    border-radius: 8px;
+                    padding-left: 10px;
+
+                    span{
+                        text-align: left;
+                        padding: 10px 5px;
+                        width: 25%;
+                    }
+                }
+
+                .row{
+                    display: flex;
+                    width: 100%;
+                    border-radius: 8px;
+                    padding-left: 10px;
+                    
+
+                    span{
+                        padding: 10px 5px;
+                        width: 25%;
+                    }
+                    &:nth-child(odd) {
+                        background-color: #bfc4c769;
+                        border-radius: 8px;
+                    }
+                }
+                
+            }
+        }
+    } 
 }

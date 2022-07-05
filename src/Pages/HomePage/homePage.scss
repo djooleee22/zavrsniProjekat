@@ -1,4 +1,4 @@
-$border-radius: 10px;
+$border-radius: 8px;
 $beige-color: rgba(245, 245, 220, 0.904);
 #home-page {
     .grid-wrapper {
@@ -20,7 +20,7 @@ $beige-color: rgba(245, 245, 220, 0.904);
         input{
             color: black;
             background-color:  $beige-color;
-            width: 27%;
+            min-width: 500px;
             padding: 10px 10px;
             outline: none;
             border: none;

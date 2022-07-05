@@ -13,13 +13,15 @@ function ReportsPage(props) {
     <div id="reports-page">
       <Header />
           <div className="main">
+            <div className="search-bar">
             <input type="Search" placeholder="Search" />
+            </div>
             <div className="table">
               <div className="title">
                 <div>Name</div>
                 <div>Interview Date</div>
                 <div className="company">Company</div>
-                <div className="status">Status</div>
+                <div>Status</div>
                 <div className="more">More</div>
               </div>
 
@@ -28,10 +30,10 @@ function ReportsPage(props) {
                 <div>{moment(el.interviewDate).format("DD.MM.YYYY")}</div>
                 <div>{el.companyName}</div>
                 <div>{el.status}</div>
-                <span>
+                <div className="more-flex">
                   <button>View</button>
                   <button>Delete</button>
-                </span>
+                </div>
               </div>)}
             </div>
           </div>

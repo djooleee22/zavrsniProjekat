@@ -1,23 +1,29 @@
 #header {
-    background-color:orangered;
-    padding: 10px;
+    background-color:white;
+    padding: 8px 15px;
+    padding-right: 25px;
     display: flex;
     justify-content: space-between;
 
     .ourLogo {
-        width: 30px;
-        border-left: 3px solid black;
-        border-bottom: 2px solid black;
+        width: 50px;
     }
     
     .navBar{
         display: flex;
         justify-content: space-between;
-    
+        align-items: center;
+        gap: 25px;
+        font-size: 18px;
+
         a {
-            padding: 0 20px;
             color: black;
-            border-left: 1px solid black;
+            text-decoration: none;
+        }
+    
+        a:not(:last-child) {      
+            border-right: 1px solid black;
+            padding-right: 18px;
         }
     }
 }

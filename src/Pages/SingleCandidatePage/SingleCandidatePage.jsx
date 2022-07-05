@@ -10,8 +10,6 @@ function SingleCandidatePage (){
     const candidates = useContext(appCtx).candidatesList;
     const reports = useContext(appCtx).reportsList
     const params = useParams();
-    // console.log(params);
-    // console.log(candidates);
     // const match = useRouteMatch();
 
     const singleCandidate = candidates.find(el => el.id == params.id);
@@ -22,35 +20,36 @@ function SingleCandidatePage (){
 
     return <div id="single-candidate-page">
         <Header />
-        <div className="main">
-            <img src="https://freesvg.org/img/user1.png" alt="user" />
-            <div className="wrapper">
-                 <h2>{singleCandidate.name}</h2>
-                <p>{moment(singleCandidate.birthday).format("DD.MM.YYYY")}</p>
-                <p>Education: {singleCandidate.education}</p>
-                <p>Email: {singleCandidate.email}</p>
-            </div>
+        <div className="wrap-main">
+            <div className="main">
+                <div className="flex">
+                    <img src="https://freesvg.org/img/user1.png" alt="user" />
+                    <div className="wrapper">
+                        <h2><i>{singleCandidate.name}</i></h2>
+                        <p><b>DOB:</b> <i>{moment(singleCandidate.birthday).format("DD.MM.YYYY")}</i></p>
+                        <p><b>Education:</b> <i>{singleCandidate.education}</i></p>
+                        <p><b>Email:</b> <i>{singleCandidate.email}</i></p>
+                    </div>
+                </div>
+                    <div className="table">
+                        <div className="heading-row">
+                            <span>Company</span>
+                            <span>Interview date</span>
+                            <span>Status</span>
+                            <span>More Info</span>
+                        </div>
 
-            <div className="wrap-reports">
-                <table>
-                    <tr>
-                        <th>Company</th>
-                        <th>Interview date</th>
-                        <th>Status</th>
-                        <th>More Info</th>
-                    </tr>
-
-                    {candidateReports.map(el => <tr>
-                        <td>{el.companyName}</td>
-                        <td>{moment(el.interviewDate).format("DD.MM.YYYY")}</td>
-                        <td>{el.status}</td>
-                        <td>Ikonica</td>
-                    </tr>)}
-                </table>
+                        {candidateReports.map(el => <div className="row">
+                            <span>{el.companyName}</span>
+                            <span>{moment(el.interviewDate).format("DD.MM.YYYY")}</span>
+                            <span>{el.status}</span>
+                            <span>Ikonica</span>
+                        </div>)}
+                    </div>
             </div>
         </div>
         <Footer />
     </div>
 }
 
-export default SingleCandidatePage
+export default SingleCandidatePage;
