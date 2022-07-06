@@ -1,21 +1,45 @@
-import React, { useContext } from "react";
+import React, { useContext, useState } from "react";
 import "./homePage.scss";
 import Header from "../../Components/Header/Header";
 import Footer from "../../Components/Footer/Footer";
 import CandidateCard from "../../Components/CandidateCard/CandidateCard";
-import {appCtx} from "../../Components/context"
+import { appCtx } from "../../Components/context";
 
-function HomePage (props){
-    const candidates = useContext(appCtx).candidatesList;
+function HomePage(props) {
+  const { candidatesList } = useContext(appCtx);
+  const [searchValue, setSearchValue] = useState("");
 
-    return <div id="home-page">
-        <Header />
-        <div className="search-bar"><input type="text" placeholder="Search"/></div>
-        <div className="grid-wrapper">
-            {candidates.map(el => <CandidateCard podaci={el}/>)}
-        </div>
-        <Footer />
+  const handleSearch = (event) => {
+    console.log("search Value ", event.target.value);
+    setSearchValue(event.target.value);
+  };
+
+  const searchedCandidates = () =>
+    searchValue
+      ? candidatesList.filter((candidate) =>
+          candidate.name.includes(searchValue)
+        )
+      : candidatesList;
+
+  return (
+    <div id="home-page">
+      <Header />
+      <div className="search-bar">
+        <input
+          type="text"
+          onChange={handleSearch}
+          value={searchValue}
+          placeholder="Search"
+        />
+      </div>
+      <div className="grid-wrapper">
+        {searchedCandidates().map((el) => (
+          <CandidateCard podaci={el} />
+        ))}
+      </div>
+      <Footer />
     </div>
+  );
 }
 
-export default HomePage
+export default HomePage;
