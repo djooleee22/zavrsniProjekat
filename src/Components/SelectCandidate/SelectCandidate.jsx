@@ -1,11 +1,15 @@
 import React, { useContext } from "react";
 import "./selectCandidate.scss";
 import CandidateCard from "../CandidateCard/CandidateCard";
-import {appCtx} from "../context"
+import {appCtx} from "../context";
+import {crpCtx} from "../context";
 
 function SelectCandidate(props) {
     const candidates = useContext(appCtx).candidatesList;
-    console.log(candidates);
+    const setCandidateSelected = useContext(crpCtx).setCandidateSelected;
+    const candidateSelected = useContext(crpCtx).candidateSelected;
+
+    console.log(candidateSelected);
 
     return <div id="select-candidate">
         <div className="flex-wrap">
@@ -15,7 +19,9 @@ function SelectCandidate(props) {
 
 
         <div className="card-wrapper">
-            {candidates.map(el => <div className="card">
+            {candidates.map(el => <div onClick={()=>{
+                setCandidateSelected(el)
+            }} className="card">
                 <div className="flex">
                     <img src={el.avatar} alt="user" />
                     <h2>{el.name}</h2>
@@ -23,8 +29,7 @@ function SelectCandidate(props) {
                 <div className="wrap-info">
                         <h4>{el.education}</h4>
                         <p>{el.email}</p>
-                    </div>
-        
+                    </div>  
             </div>)}
         </div>
         <button className="btn">Next</button>
