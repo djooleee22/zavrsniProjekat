@@ -36,6 +36,7 @@
                 width: 80%;
             }
             .table {
+                font-size: 14px;
                 background-color: white;
                 width: 60%;
                 border-spacing: 20px;
@@ -74,6 +75,22 @@
                         background-color: #bfc4c769;
                         border-radius: 8px;
                     }
+                    .center {
+                        padding-left: 20px;
+                        .view-btn {
+                            padding: 3px 10px;
+                            font-size: 12px;
+                            border-radius: 6px;
+                            border: none;
+                            background-color: #094166;
+                            color: white;
+                            cursor: pointer;
+                            &:hover{
+                                background-color: #0964a0;
+                            }
+                        }
+                    }
+                    
                 }
                 
             }

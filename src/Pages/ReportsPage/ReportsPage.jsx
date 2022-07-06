@@ -4,9 +4,13 @@ import Footer from "../../Components/Footer/Footer";
 import "./reportsPage.scss";
 import {appCtx} from "../../Components/context";
 import moment from "moment";
+import Modal from "../../Components/Modal/Modal";
 
 function ReportsPage(props) {
   const reports = useContext(appCtx).reportsList;
+  const modalOpen = useContext(appCtx).modalOpen;
+  const setModalOpen = useContext(appCtx).setModalOpen;
+  const setSingleReport = useContext(appCtx).setSingleReport;
   console.log(reports);
   if(!reports) return null;
   return (
@@ -31,11 +35,15 @@ function ReportsPage(props) {
                 <div>{el.companyName}</div>
                 <div>{el.status}</div>
                 <div className="more-flex">
-                  <button>View</button>
+                  <button onClick={()=>{
+                    setSingleReport(el)
+                    setModalOpen(true)
+                  }}>View</button>
                   <button>Delete</button>
                 </div>
               </div>)}
             </div>
+            {modalOpen && <Modal/>}
           </div>
       <Footer />
     </div>

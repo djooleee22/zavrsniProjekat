@@ -12,6 +12,8 @@ function App() {
   const [candidatesList, setCandidatesList] = useState([]);
   const [companiesList, setCompaniesList] = useState([]);
   const [reportsList, setReportsList] = useState([]);
+  const [singleReport, setSingleReport] = useState({});
+  const [modalOpen, setModalOpen] = useState(false);
 
   function fetchData() {
     fetch("http://localhost:3333/664/api/candidates")
@@ -29,7 +31,7 @@ function App() {
 
   useEffect(fetchData, []);
 
-  // console.log(candidateInfo);
+  console.log(singleReport);
 
   return (
     <div>
@@ -39,6 +41,10 @@ function App() {
             candidatesList,
             reportsList,
             companiesList,
+            singleReport,
+            setSingleReport,
+            setModalOpen,
+            modalOpen,
           }}
         >
           <Route exact path="/">

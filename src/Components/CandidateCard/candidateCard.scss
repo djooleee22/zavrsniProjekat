@@ -1,5 +1,4 @@
 #candidate-card {
-
     background-color: beige;
     height: 250px;
     width: 250px;
@@ -10,6 +9,7 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    font-size: 14px;
 
     .flex {
         display: flex;
