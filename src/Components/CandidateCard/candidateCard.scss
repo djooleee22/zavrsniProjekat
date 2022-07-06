@@ -1,9 +1,8 @@
 #candidate-card {
-    background-color: beige;
-    height: 250px;
+    background-color: white;
+    height: 350px;
     width: 250px;
     border-radius: 8px;
-    padding: 20px;
     cursor: pointer;
     transition: all 0.4s;
     display: flex;
@@ -12,12 +11,20 @@
     font-size: 14px;
 
     .flex {
+        background-color: #6ccebc;
+        width: 100%;
+        height: 30%;
         display: flex;
         align-items: center;
-        gap: 30px;
-        margin-bottom: 20px;
+        position: relative;
+        border-radius: 8px 8px 0 0;
+        
         img {
             width: 40%;
+            border-radius: 50%;
+            position: absolute;
+            bottom: -45px;
+            left: 30%;
         }
         h2 {
             border-left: 1px solid orange;
@@ -28,7 +35,10 @@
     .wrap-info{
         display: flex;
         flex-direction: column;  
-        align-items: center;      
+        align-items: center;  
+        background-color: white;  
+        width: 100%; 
+        margin-top: 70px; 
         
         h4 {
             margin-top: 10px;
@@ -41,14 +51,13 @@
     a{
         text-decoration: none;
         padding: 5px 25px;
-        color: black;
         margin-top: 10px;
-        background-color: #010168de;
+        background-color: #ce6c7e;
         color: white;
         border-radius: 8px;
-
+        transition: all 0.3s;
         &:hover{
-            color: rgb(165, 164, 164);
+            background-color: #ec8598;
         }
     }
 }

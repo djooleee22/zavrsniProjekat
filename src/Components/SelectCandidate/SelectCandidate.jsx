@@ -17,7 +17,7 @@ function SelectCandidate(props) {
         <div className="card-wrapper">
             {candidates.map(el => <div className="card">
                 <div className="flex">
-                    <img src="https://freesvg.org/img/user1.png" alt="user" />
+                    <img src={el.avatar} alt="user" />
                     <h2>{el.name}</h2>
                 </div>
                 <div className="wrap-info">

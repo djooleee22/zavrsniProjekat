@@ -1,5 +1,5 @@
 $border-radius: 8px;
-$beige-color: rgba(245, 245, 220, 0.904);
+$beige-color: white;
 #home-page {
     .grid-wrapper {
         padding: 50px 150px;
@@ -7,7 +7,7 @@ $beige-color: rgba(245, 245, 220, 0.904);
         margin: 0 auto;
         display: grid;
         grid-template-columns: 1fr 1fr 1fr 1fr;
-        gap: 20px;
+        gap: 30px;
         justify-content: center;
         align-items: center;
         

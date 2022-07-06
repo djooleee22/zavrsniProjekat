@@ -10,7 +10,7 @@
             padding: 30px 50px;
             min-height: 86vh;
             justify-content: center;
-            background-color: rgba(255, 255, 255, 0.856);
+            background-color: rgb(255, 255, 255);
             border-radius: 20px;
             color: black;   
             .flex {
@@ -28,12 +28,28 @@
                         margin-bottom: 20px;
                     }
                     p{
-                        font-size: 20px;
+                        font-size: 16px;
+                        display: flex;
+                        flex-wrap: wrap;
+                        align-items: flex-start;
+                        gap: 10px;
+                    }
+                    p:nth-child(3){
+                        align-items: center;
+                    }
+                  
+                    .icons{
+                        width: 25px;
+
+                    }
+                    .icon{
+                        width: 27px;
                     }
                 }
             }
             img {
-                width: 80%;
+                width: 75%;
+                border-radius: 50%;
             }
             .table {
                 font-size: 14px;
@@ -46,7 +62,7 @@
 
 
                 .heading-row {
-                    background-color: #094166 !important;
+                    background-color: #6ccebc !important;
                     color: white;
                     display: flex;
                     width: 100%;
@@ -62,6 +78,7 @@
 
                 .row{
                     display: flex;
+                    align-items: center;
                     width: 100%;
                     border-radius: 8px;
                     padding-left: 10px;
@@ -78,15 +95,17 @@
                     .center {
                         padding-left: 20px;
                         .view-btn {
-                            padding: 3px 10px;
+                            padding: 5px 12px;
                             font-size: 12px;
                             border-radius: 6px;
                             border: none;
-                            background-color: #094166;
+                            background-color: #6ccebc;
                             color: white;
                             cursor: pointer;
+                            transition: all 0.3s;
                             &:hover{
-                                background-color: #0964a0;
+                                background-color: #7ce4d1;
+                                color: white;
                             }
                         }
                     }

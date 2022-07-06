@@ -3,10 +3,11 @@ $border-radius: 8px;
 #reports-page{  
     .main{
         padding: 50px 100px;
+        height: 100vh;
 
         .title {
             // gap: 20px;
-            background-color: rgb(4, 121, 255);
+            background-color: #6ccebc;
             margin: 10px 20px;
             padding: 10px;
             display: flex;
@@ -25,7 +26,7 @@ $border-radius: 8px;
         }
         
             .row {
-                background-color: beige;
+                background-color: white;
                 margin: 10px 20px;
                 padding: 10px;
                 display: flex;
@@ -44,16 +45,17 @@ $border-radius: 8px;
 
         
                 button{
-                    background-color: orangered;
+                    background-color: #6ccebc;
                     color: white;
                     border: none;
                     margin-left: 5px;
                     padding: 5px 10px;
                     border-radius: $border-radius;
                     cursor: pointer;
+                    transition: all 0.3s;
         
                     &:hover{
-                        background-color: rgb(245, 121, 38);
+                        background-color: #7ae9d4;
                     }
                 }
             }
@@ -63,7 +65,7 @@ $border-radius: 8px;
                 margin-bottom: 50px;
                 input{
                     color: black;
-                    background-color: beige;
+                    background-color: white;
                     min-width: 500px;
                     padding: 10px 10px;
                     outline: none;
