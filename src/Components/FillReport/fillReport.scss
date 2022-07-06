@@ -8,10 +8,28 @@
         }
         .form{
 
-            .fill-report-label{
+            margin: 50px 0;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            
+            .fill-label{
                 color: white;
                 display: flex;
-                margin-bottom: 20px;            }
+                margin: 20px 0;
+
+                #interview-date{
+                    margin-left: 5px;
+                }
+
+                #phase{
+                    margin-left: 59px;
+                }
+
+                #status{
+                    margin-left: 57px;
+                }
+                }
 
         }
     
@@ -19,6 +37,14 @@
             display: flex;
             justify-content: space-between;
             margin-top: 25px;
+
+            button{
+                padding: 5px;
+                background-color: orangered;
+                border: none;
+                color: white;
+                border-radius: 5px;
+            }
         }
     
         .companies {
@@ -27,6 +53,8 @@
          }
          textarea {
             display: block;
+            margin-top: 5px;
+            border-radius: 10px;
          }
          p {
             color: white;
