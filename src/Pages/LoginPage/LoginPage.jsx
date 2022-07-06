@@ -15,27 +15,26 @@ import Logo10 from '../../images/logo/logo-10.png';
 import {useState} from "react";
 import {appCtx} from "../../Components/context";
 
-
-function LoginPage(props) {
+function LoginPage() {
     const [user, setUser] = useState("");
     const [password, setPassword] = useState("");
-
     const setToken = useContext(appCtx).setToken;
 
-    console.log(user, password);
+    // console.log(user, password);
 
-     function logInFunction(){
+    function logInFunction(){
         fetch("http://localhost:3333/login", {
             method: "POST", 
             body: JSON.stringify({
                 "email": user,
                 "password": password
               }),
-              headers: {"content-type": "application/json"}
+            headers: {"content-type": "application/json"}
         }).then(res => res.json()).then(res => {
-            console.log(res);
-            setToken(res.accessToken)})
-     }
+            // console.log(res);
+            setToken(res.accessToken)}
+        )
+    }
 
     return (
 
@@ -45,7 +44,7 @@ function LoginPage(props) {
                 <div className="left-box">
                     <div className="left">
                         <img className="logo" src={Logo} alt="logo"></img>
-                        <h1>Welcome to our platform, We are hiring</h1>
+                        <h1>We are hiring</h1>
                         <img className="left-img" src={Illustration} alt="illustration"></img>
                     </div>
                 </div>
@@ -62,11 +61,10 @@ function LoginPage(props) {
                             <span></span>
                             <label>Password</label>
                         </div>
-                            
-                        <div className="wrapp-btn">
+                        <div className="wrap-btn">
                             <button onClick={logInFunction} type="button" className="sign-in">sign in</button>
-                            <p className="parag-1">Not a member?</p>
-                            <p className="parag-2">Contact <a href="mailto:wiarehiring@gmail.com">wiarehiring@gmail.com</a> for membership.</p>
+                            <p className="text-1">Not a member?</p>
+                            <p className="text-2">Contact <a href="mailto:wiarehiring@gmail.com">wiarehiring@gmail.com</a> for membership.</p>
                         </div>
                     </div>
                     <span className="hashtag">#we_are_hiring</span>
