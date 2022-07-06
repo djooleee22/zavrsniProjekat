@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useContext } from "react";
 import "./login-page.scss"
 import Illustration from '../../images/2.webp'
 import Logo from '../../images/logo.png'
@@ -12,44 +12,65 @@ import Logo7 from '../../images/logo/logo-7.png';
 import Logo8 from '../../images/logo/logo-8.png';
 import Logo9 from '../../images/logo/logo-9.png';
 import Logo10 from '../../images/logo/logo-10.png';
+import {useState} from "react";
+import {appCtx} from "../../Components/context";
 
 
 function LoginPage(props) {
+    const [user, setUser] = useState("");
+    const [password, setPassword] = useState("");
+
+    const setToken = useContext(appCtx).setToken;
+
+    console.log(user, password);
+
+     function logInFunction(){
+        fetch("http://localhost:3333/login", {
+            method: "POST", 
+            body: JSON.stringify({
+                "email": user,
+                "password": password
+              }),
+              headers: {"content-type": "application/json"}
+        }).then(res => res.json()).then(res => {
+            console.log(res);
+            setToken(res.accessToken)})
+     }
 
     return (
 
     <div id="login-page">
-            <h1>Welcome to the our platform!</h1>
+            <h1>Welcome to our platform!</h1>
             <div className="wrapper">
                 <div className="left-box">
                     <div className="left">
                         <img className="logo" src={Logo} alt="logo"></img>
-                        <h1>Welcome to the our platform, We are hiring</h1>
+                        <h1>Welcome to our platform, We are hiring</h1>
                         <img className="left-img" src={Illustration} alt="illustration"></img>
                     </div>
                 </div>
-                <form className="right-box" method="post" >
+                <div className="right-box">
                     <div className="right">
                         <h2>Sign in</h2>
                         <div className="text-field">
-                            <input type="text" required/>
+                            <input type="text" onChange={(e)=>setUser(e.target.value)} required/>
                             <span></span>
                             <label>Username</label>
                         </div>
                         <div className="text-field">
-                            <input type="password" required />
+                            <input type="password" onChange={(e)=>setPassword(e.target.value)} required />
                             <span></span>
                             <label>Password</label>
                         </div>
                             
                         <div className="wrapp-btn">
-                            <button className="sign-in">sign in</button>
+                            <button onClick={logInFunction} type="button" className="sign-in">sign in</button>
                             <p className="parag-1">Not a member?</p>
-                            <p className="parag-2">Contact <span>wiarehiring@gmail.com</span> for membership.</p>
+                            <p className="parag-2">Contact <a href="mailto:wiarehiring@gmail.com">wiarehiring@gmail.com</a> for membership.</p>
                         </div>
                     </div>
                     <span className="hashtag">#we_are_hiring</span>
-                </form>
+                </div>
             </div>
             <div className="footer">
                 <div>Our partners:</div>

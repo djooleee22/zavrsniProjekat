@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React, { useContext, useState } from "react";
 import Header from "../../Components/Header/Header";
 import Footer from "../../Components/Footer/Footer";
 import "./reportsPage.scss";
@@ -11,7 +11,20 @@ function ReportsPage(props) {
   const modalOpen = useContext(appCtx).modalOpen;
   const setModalOpen = useContext(appCtx).setModalOpen;
   const setSingleReport = useContext(appCtx).setSingleReport;
+  const token = useContext(appCtx).token;
+  const refresh = useContext(appCtx).refresh;
+  const setRefresh = useContext(appCtx).setRefresh;
+  
+  
   console.log(reports);
+
+  function deleteRep(id){
+    fetch(`http://localhost:3333/664/api/reports/${id}`, {
+      method: "DELETE",
+      headers: { Authorization: `Bearer ${token}` }
+    })
+  }
+
   if(!reports) return null;
   return (
     <div id="reports-page">
@@ -39,7 +52,10 @@ function ReportsPage(props) {
                     setSingleReport(el)
                     setModalOpen(true)
                   }}>View</button>
-                  <button>Delete</button>
+                  <button onClick={() => {
+                    deleteRep(el.id)
+                    setRefresh(!refresh)
+                    }}>Delete</button>
                 </div>
               </div>)}
             </div>
