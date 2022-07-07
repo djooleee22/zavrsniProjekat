@@ -10,7 +10,6 @@ function HomePage(props) {
   const [searchValue, setSearchValue] = useState("");
 
   const handleSearch = (event) => {
-    console.log("search Value ", event.target.value);
     setSearchValue(event.target.value);
   };
 
@@ -29,9 +28,11 @@ function HomePage(props) {
           type="text"
           onChange={handleSearch}
           value={searchValue}
-          placeholder="Search"
-        />
+          placeholder="Search..."
+          />
       </div>
+
+
       <div className="grid-wrapper">
         {searchedCandidates().map((el) => (
           <CandidateCard podaci={el} />

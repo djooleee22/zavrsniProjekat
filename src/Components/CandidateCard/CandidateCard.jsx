@@ -6,7 +6,7 @@ import {Link} from "react-router-dom"
 function CandidateCard (props) {
     const data = useContext(appCtx);
 
-    console.log(data);
+    //console.log(data);
     if(!props.podaci) return null;
     return <div id="candidate-card">
         <div className="flex">

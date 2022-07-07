@@ -37,7 +37,7 @@ function App() {
 
   useEffect(fetchData, []);
 
-  console.log(token);
+  //console.log(token);
 
   return (
     <div>
