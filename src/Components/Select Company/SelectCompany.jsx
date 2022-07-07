@@ -2,18 +2,20 @@ import { computeHeadingLevel } from "@testing-library/react";
 import React, { useContext } from "react";
 import { appCtx } from "../context";
 import "./selectCompany.scss";
-import GoogleLogo from "../../images/companies/google.png";
-import FacebookLogo from "../../images/companies/facebook.png";
-import MicrosoftLogo from "../../images/companies/microsoft.png";
-import TeslaLogo from "../../images/companies/tesla.png";
-import AlphabetLogo from "../../images/companies/alphabet.png";
+import logo1 from "../../images/companies/logo1.jpg";
+import logo2 from "../../images/companies/logo2.jpg";
+import logo3 from "../../images/companies/logo3.webp";
+import logo4 from "../../images/companies/logo4.jpg";
+import logo5 from "../../images/companies/logo5.webp";
+import logo6 from '../../images/companies/logo6.jpg'
 
 const Images = [
-  GoogleLogo,
-  FacebookLogo,
-  MicrosoftLogo,
-  TeslaLogo,
-  AlphabetLogo,
+  logo1,
+  logo2,
+  logo3,
+  logo4,
+  logo5,
+  logo6
 ];
 
 function SelectCompany(props) {
@@ -23,17 +25,20 @@ function SelectCompany(props) {
   return (
     <div id="select-company">
       <div className="flex-wrap">
-        <h2>Select Company</h2>
+        {/* <h2>Select Company</h2> */}
         <input type="text" placeholder="Search.." />
       </div>
 
       <div className="company-wrapper">
         {dataCompany.map((el, index) => (
           <div key={index} className="company-card">
-            <img src={Images[index]} alt="slika" />
+            <div className="green">
+              <img src={Images[index]} alt="slika" />
+
+            </div>
             <div className="company-info">
               <h2>{el.name}</h2>
-              <h4>{el.email}</h4>
+              <p>{el.email}</p>
             </div>
           </div>
         ))}
