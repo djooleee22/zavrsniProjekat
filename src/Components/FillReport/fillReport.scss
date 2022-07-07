@@ -1,5 +1,6 @@
 #fill-report{
-        padding: 0 305px;
+        width: 60%;
+        margin: 0 auto;
     
         .flex-wrap {
             
@@ -10,25 +11,32 @@
             background-color: white;
             padding: 20px 50px;
             border-radius: 8px;
-            margin: 50px 0;
+            margin-bottom: 50px;
             display: flex;
             flex-direction: column;
             justify-content: center;
             border-top: #6ccebc 60px solid;
+
+            .margin-right {
+                display: flex;
+                gap: 8px;
+                .interviewDate{
+                    padding: 5px;
+                    margin-left: 5px;
+                    border-radius: 5px;
+                    background-color: #ce6c7ec5;
+                    color: white;
+                    border: none; 
+                    outline: none;
+                }
+            }
             
             .fill-label{
                 
                 display: flex;
                 margin: 20px 0;
 
-                #interview-date{
-                    margin-left: 5px;
-                    border-radius: 5px;
-                    background-color: #ce6c7ec5;
-                    color: white;
-                    border: none;
-                    
-                }
+                
 
                 #phase{
                     margin-left: 70px;
@@ -36,7 +44,7 @@
                     background-color: #ce6c7ec5;
                     color: white;
                     border: none;
-
+                    outline: none;
                 }
 
                 #status{
@@ -45,10 +53,9 @@
                     background-color: #ce6c7ec5;
                     color: white;
                     border: none;
-
+                    outline: none;
                 }
                 }
-
         }
     
         .btn-wrap{
@@ -58,15 +65,16 @@
             margin-bottom: 20px;
 
             button{
-                padding: 8px;
+                padding: 10px 20px;
                 background-color: #6ccebc;
                 border: none;
                 color: white;
                 border-radius: 5px;
                 transition: all 0.3s;
-            }
-            button:hover{
-                background-color:#7ae9d4 ;
+                cursor: pointer;
+                &:hover{
+                    background-color:#7ae9d4 ;
+                }
             }
         }
     
@@ -78,14 +86,12 @@
             display: block;
             margin-top: 5px;
             border-radius: 10px;
-         }
-         p {
-            
+            padding: 20px;
+            outline: none;
+            word-break: break-all;
          }
          h2{
             color: white;
-         }
-            
-            
+         }  
          }
     

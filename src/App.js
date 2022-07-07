@@ -14,7 +14,7 @@ function App() {
   const [reportsList, setReportsList] = useState([]);
   const [singleReport, setSingleReport] = useState({});
   const [modalOpen, setModalOpen] = useState(false);
-  const [token, setToken] = useState("");
+  const [token, setToken] = useState(localStorage.getItem("token"));
   const [refresh, setRefresh] = useState(false);
 
   function fetchData() {

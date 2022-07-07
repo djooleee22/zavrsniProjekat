@@ -12,6 +12,7 @@ function SelectCandidate(props) {
 
   const { candidatesList } = useContext(appCtx);
   const [searchValue, setSearchValue] = useState("");
+  const [next, setNext] = useState(false);
 
   const handleSearch = (event) => {
     setSearchValue(event.target.value);
@@ -27,7 +28,6 @@ console.log()
   return (
     <div id="select-candidate">
       <div className="flex-wrap">
-        <h2>Select Candidate</h2>
         <input
           type="text"
           onChange={handleSearch}
@@ -36,16 +36,18 @@ console.log()
         />
       </div>
 
-      <div className="card-wrapper candidate-card">
+      <div className="candidate-card">
         {searchedCandidates().map((el) => (
-          <CandidateCard podaci={el} setCandidateSelected={setCandidateSelected}
+          <CandidateCard podaci={el} setNext={setNext} next={next} setCandidateSelected={setCandidateSelected}
           />
         ))}
       </div>
 
-      <button onClick={goToCompany} className="btn">
+          <div className="btn-wrap">
+      <button onClick={goToCompany} className={next ? "btn active" : "btn"}>
         Next
       </button>
+      </div>
     </div>
   );
 }

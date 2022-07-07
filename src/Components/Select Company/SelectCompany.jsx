@@ -14,6 +14,7 @@ const Images = [logo1, logo2, logo3, logo4, logo5, logo6];
 function SelectCompany(props) {
   const companyData = useContext(appCtx).companiesList;
   const [searchValue, setSearchValue] = useState("");
+  const [next, setNext] = useState(false);
 
   const handleSearch = (event) => {
     setSearchValue(event.target.value);
@@ -47,6 +48,7 @@ function SelectCompany(props) {
             key={index}
             onClick={() => {
               setCompany(el);
+              setNext(!next)
             }}
             className="company-card"
           >
@@ -62,10 +64,10 @@ function SelectCompany(props) {
       </div>
 
       <div className="btn-wrap">
-        <button onClick={backToCandidate} className="btn">
+        <button onClick={backToCandidate} className="prev">
           Back
         </button>
-        <button onClick={goToReportFill} className="btn">
+        <button onClick={goToReportFill} className={next ? "active next" : "next"}>
           Next
         </button>
       </div>

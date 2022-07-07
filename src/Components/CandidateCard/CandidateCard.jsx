@@ -8,7 +8,9 @@ function CandidateCard (props) {
 
     //console.log(data);
     if(!props.podaci) return null;
-    return <div id="candidate-card" onClick={()=>props.setCandidateSelected(props.podaci)}>
+    return <div id="candidate-card" onClick={()=>{
+        props.setNext(!props.next)
+        props.setCandidateSelected(props.podaci)}}>
         <div className="flex">
             <img src={props.podaci.avatar} alt="user" />
         </div>

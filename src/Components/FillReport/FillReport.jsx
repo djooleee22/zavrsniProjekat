@@ -2,6 +2,7 @@ import React, { useContext, useState } from "react";
 import "./fillReport.scss";
 import {crpCtx} from "../context";
 import {appCtx} from "../context";
+import moment from "moment";
 
 function FillReport(props) {
   const backToCompany = useContext(crpCtx).backToCompany;
@@ -36,18 +37,18 @@ function FillReport(props) {
     })
   }
 
+
   return (
     <div id="fill-report">
       <div className="flex-wrap">
-        <h2>Fill Report Details</h2>
       </div>
 
       <div className="form">
-        <label className="fill-label">
+        <label className="fill-label margin-right">
           Interview date:
-          <input onChange={(e)=>{
+          <input className="interviewDate" onChange={(e)=>{
             setInterviewDate(e.target.value)
-          }} type="date" />
+          }} type="date" max={moment().format("YYYY-DD-MM")}/>
         </label>
         <label className="fill-label">
           Phase:
@@ -72,7 +73,7 @@ function FillReport(props) {
           </select>
         </label>
         <p>Note:</p>
-        <textarea onChange={(e)=>setNote(e.target.value)} name="" id="" cols="50" rows="20"></textarea>
+        <textarea onChange={(e)=>setNote(e.target.value)} name="" id="" cols="10" rows="20"></textarea>
       </div>
 
       <div className="btn-wrap">

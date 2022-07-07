@@ -19,7 +19,7 @@ function CreateReportPage(props){
     }
 
     function afterSubmit(){
-        history.push("/home-page")
+        history.push("/reports-page")
     }
 
     function goToReportFill(){
@@ -38,12 +38,12 @@ function CreateReportPage(props){
 
     return (<div id="create-report-page">
         <Header/>
-        <CrpProvider value={{candidateSelected,setCandidateSelected,companySelected,setCompanySelected, goToCompany,goToReportFill, backToCandidate,backToCompany,afterSubmit}}>
+        <CrpProvider value={{candidateSelected,setCandidateSelected,companySelected,setCompanySelected, goToCompany,goToReportFill, backToCandidate,backToCompany,afterSubmit, }}>
         <div className="main">
             <div className="buttons">
-                <Link to="/create-report-page">Select Candidate</Link>
-                <Link to="/create-report-page/select-company">Select Company</Link>
-                <Link to="/create-report-page/fill-report">Fill Report</Link>
+                <div className="options">Select Candidate</div>
+                <div className="options">Select Company</div>
+                <div className="options">Fill Report</div>
             </div>
         <Switch>
             <Route exact path="/create-report-page"><SelectCandidate/></Route>

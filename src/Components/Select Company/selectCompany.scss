@@ -87,18 +87,33 @@ $border-radius: 5px;
         padding-top: 20px;
         padding-bottom: 50px;
 
-        button{
-            padding: 5px 10px;
+        .prev {
+            padding: 10px 20px;
             border-radius: $border-radius;
             background-color: #6ccebc;
             border: none;
             color: white;
-            cursor: pointer;
             transition: all .3s;
+            cursor: pointer;
+                &:hover{
+                    background-color:#7ae9d4;
+                }
+        }
 
-            &:hover{
-                background-color: #7ae9d4;
-            }
+        .next{
+            padding: 10px 20px;
+            border-radius: $border-radius;
+            background-color: white;
+            border: none;
+            color: black;
+            transition: all .3s;
+            &.active {background-color: #6ccebc;
+                color: white;
+                cursor: pointer;
+                &:hover{
+                    background-color:#7ae9d4;
+                }
+                }
         }
     }
 }
