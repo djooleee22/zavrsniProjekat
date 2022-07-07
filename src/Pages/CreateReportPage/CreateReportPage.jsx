@@ -24,7 +24,7 @@ function CreateReportPage(props){
             </div>
         <Switch>
             <Route exact path="/create-report-page"><SelectCandidate/></Route>
-            {companySelected && <Route path="/create-report-page/select-company"><SelectCompany/></Route>}
+          <Route path="/create-report-page/select-company"><SelectCompany/></Route>
             <Route path="/create-report-page/fill-report"><FillReport/></Route>
         </Switch>
         </div>

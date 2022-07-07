@@ -35,7 +35,7 @@ function FillReport(props) {
           </select>
         </label>
         <p>Note:</p>
-        <textarea name="" id="" cols="50" rows="20"></textarea>
+        <textarea name="" id="" cols="50" rows="10"></textarea>
       </div>
 
       <div className="btn-wrap">

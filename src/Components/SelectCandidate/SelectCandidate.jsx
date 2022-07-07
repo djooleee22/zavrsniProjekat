@@ -12,26 +12,29 @@ function SelectCandidate(props) {
     console.log(candidateSelected);
 
     return <div id="select-candidate">
-        <div className="flex-wrap">
-            <h2>Select Candidate</h2>
+        <div className="search-bar">
             <input type="text" placeholder="search.."/>
         </div>
 
 
-        <div className="card-wrapper">
+        <div className="candidate-card">
             {candidates.map(el => <div onClick={()=>{
                 setCandidateSelected(el)
             }} className="card">
+
                 <div className="flex">
-                    <img src={el.avatar} alt="user" />
-                    <h2>{el.name}</h2>
+                    <img src="https://xsgames.co/randomusers/assets/avatars/male/18.jpg" alt="" />
+                    {/* <img src={el.avatar} alt="user" /> */}
                 </div>
+
                 <div className="wrap-info">
+                        <h2>{el.name}</h2>
                         <h4>{el.education}</h4>
                         <p>{el.email}</p>
                     </div>  
             </div>)}
         </div>
+
         <button className="btn">Next</button>
     </div>
 }
