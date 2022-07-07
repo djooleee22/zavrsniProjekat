@@ -17,7 +17,7 @@ function HomePage(props) {
   const searchedCandidates = () =>
     searchValue
       ? candidatesList.filter((candidate) =>
-          candidate.name.includes(searchValue)
+          candidate.name.toLowerCase().includes(searchValue.toLowerCase())
         )
       : candidatesList;
 

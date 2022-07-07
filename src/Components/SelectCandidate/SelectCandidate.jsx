@@ -8,6 +8,7 @@ function SelectCandidate(props) {
     const candidates = useContext(appCtx).candidatesList;
     const setCandidateSelected = useContext(crpCtx).setCandidateSelected;
     const candidateSelected = useContext(crpCtx).candidateSelected;
+    const goToCompany = useContext(crpCtx).goToCompany;
 
     console.log(candidateSelected);
 
@@ -32,7 +33,7 @@ function SelectCandidate(props) {
                     </div>  
             </div>)}
         </div>
-        <button className="btn">Next</button>
+        <button onClick={goToCompany} className="btn">Next</button>
     </div>
 }
 

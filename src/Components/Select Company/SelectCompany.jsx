@@ -1,4 +1,3 @@
-import { computeHeadingLevel } from "@testing-library/react";
 import React, { useContext } from "react";
 import { appCtx } from "../context";
 import "./selectCompany.scss";
@@ -7,6 +6,7 @@ import FacebookLogo from "../../images/companies/facebook.png";
 import MicrosoftLogo from "../../images/companies/microsoft.png";
 import TeslaLogo from "../../images/companies/tesla.png";
 import AlphabetLogo from "../../images/companies/alphabet.png";
+import { crpCtx } from "../context";
 
 const Images = [
   GoogleLogo,
@@ -18,7 +18,9 @@ const Images = [
 
 function SelectCompany(props) {
   const dataCompany = useContext(appCtx).companiesList;
-  console.log(dataCompany);
+  const setCompany = useContext(crpCtx).setCompanySelected;
+  const goToReportFill = useContext(crpCtx).goToReportFill;
+  const backToCandidate = useContext(crpCtx).backToCandidate;
 
   return (
     <div id="select-company">
@@ -29,7 +31,9 @@ function SelectCompany(props) {
 
       <div className="company-wrapper">
         {dataCompany.map((el, index) => (
-          <div key={index} className="company-card">
+          <div key={index} onClick={()=>{
+            setCompany(el);
+          }} className="company-card">
             <img src={Images[index]} alt="slika" />
             <div className="company-info">
               <h2>{el.name}</h2>
@@ -40,8 +44,8 @@ function SelectCompany(props) {
       </div>
 
       <div className="btn-wrap">
-        <button className="btn">Back</button>
-        <button className="btn">Next</button>
+        <button onClick={backToCandidate} className="btn">Back</button>
+        <button onClick={goToReportFill} className="btn">Next</button>
       </div>
     </div>
   );
