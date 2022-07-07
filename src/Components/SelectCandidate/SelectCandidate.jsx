@@ -5,9 +5,7 @@ import { appCtx } from "../context";
 import { crpCtx } from "../context";
 
 function SelectCandidate(props) {
-  const candidates = useContext(appCtx).candidatesList;
   const setCandidateSelected = useContext(crpCtx).setCandidateSelected;
-  const candidateSelected = useContext(crpCtx).candidateSelected;
   const goToCompany = useContext(crpCtx).goToCompany;
 
   const { candidatesList } = useContext(appCtx);
@@ -24,7 +22,7 @@ function SelectCandidate(props) {
           candidate.name.toLowerCase().includes(searchValue.toLowerCase())
         )
       : candidatesList;
-console.log()
+
   return (
     <div id="select-candidate">
       <div className="flex-wrap">
@@ -37,8 +35,8 @@ console.log()
       </div>
 
       <div className="candidate-card">
-        {searchedCandidates().map((el) => (
-          <CandidateCard podaci={el} setNext={setNext} next={next} setCandidateSelected={setCandidateSelected}
+        {searchedCandidates().map((el, index) => (
+          <CandidateCard key={index} podaci={el} setNext={setNext} next={next} setCandidateSelected={setCandidateSelected}
           />
         ))}
       </div>

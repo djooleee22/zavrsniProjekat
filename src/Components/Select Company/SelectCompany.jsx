@@ -9,10 +9,13 @@ import logo4 from "../../images/companies/logo4.jpg";
 import logo5 from "../../images/companies/logo5.webp";
 import logo6 from "../../images/companies/logo6.jpg";
 
-const Images = [logo1, logo2, logo3, logo4, logo5, logo6];
+const Logos = [logo1, logo2, logo3, logo4, logo5, logo6];
 
 function SelectCompany(props) {
   const companyData = useContext(appCtx).companiesList;
+  const setCompany = useContext(crpCtx).setCompanySelected;
+  const goToReportFill = useContext(crpCtx).goToReportFill;
+  const backToCandidate = useContext(crpCtx).backToCandidate;
   const [searchValue, setSearchValue] = useState("");
   const [next, setNext] = useState(false);
 
@@ -26,10 +29,7 @@ function SelectCompany(props) {
           company.name.toLowerCase().includes(searchValue.toLowerCase())
         )
       : companyData;
-  const dataCompany = useContext(appCtx).companiesList;
-  const setCompany = useContext(crpCtx).setCompanySelected;
-  const goToReportFill = useContext(crpCtx).goToReportFill;
-  const backToCandidate = useContext(crpCtx).backToCandidate;
+
 
   return (
     <div id="select-company">
@@ -53,7 +53,7 @@ function SelectCompany(props) {
             className="company-card"
           >
             <div className="green">
-              <img src={Images[index]} alt="slika" />
+              <img src={Logos[index]} alt="slika" />
             </div>
             <div className="company-info">
               <h2>{el.name}</h2>

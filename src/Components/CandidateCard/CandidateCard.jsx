@@ -1,12 +1,9 @@
-import React, { useContext } from "react";
+import React from "react";
 import "./candidateCard.scss";
-import {appCtx} from "../context"
 import {Link} from "react-router-dom"
 
 function CandidateCard (props) {
-    const data = useContext(appCtx);
 
-    //console.log(data);
     if(!props.podaci) return null;
     return <div id="candidate-card" onClick={()=>{
         props.setNext(!props.next)

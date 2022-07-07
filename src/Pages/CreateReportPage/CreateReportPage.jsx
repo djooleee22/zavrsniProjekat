@@ -1,11 +1,10 @@
-import React, { useContext, useState } from "react";
+import React, { useState } from "react";
 import "./createReportPage.scss";
 import Header from "../../Components/Header/Header";
 import SelectCandidate from "../../Components/SelectCandidate/SelectCandidate";
 import SelectCompany from "../../Components/Select Company/SelectCompany";
 import FillReport from "../../Components/FillReport/FillReport";
-import { Route, Switch, Link, useHistory } from "react-router-dom";
-import {appCtx} from "../../Components/context";
+import { Route, Switch, useHistory } from "react-router-dom";
 import {CrpProvider} from "../../Components/context";
 
 
