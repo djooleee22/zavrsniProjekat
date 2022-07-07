@@ -1,59 +1,104 @@
 $border-radius: 5px;
 
 #select-company{
-    padding: 0 305px;
+    display: flex;
+    flex-direction: column;
+    padding: 0 200px;
+    align-items: center;
+    justify-content: center;
+    
     .flex-wrap {
         color: white;
         display: flex;
-        justify-content: space-between;
-        margin-bottom: 25px;
+        justify-content: center;
+        margin-bottom: 50px;
 
         input{
             padding: 10px;
             border-radius: $border-radius;
             border: none;
+            min-width: 500px;
+            outline: none;
+            border-radius: 8px;
         }
         
     }
-
     .company-wrapper{
         display: flex;
+        flex-wrap: wrap;
+        gap: 30px;
 
         .company-card {
             background-color: white;
-            margin: 30px;
-            border-radius: $border-radius;
+            height: 350px;
+            width: 250px;
+            border-radius: 8px;
+            cursor: pointer;
+            transition:  all .4s;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            font-size: 14px;
+
+            .green{
+                background-color: #6ccebc;
+                width: 100%;
+                height: 30%;
+                border-radius: 8px 8px 0 0;
+                display: flex;
+                align-items: center;
+                position: relative;
+            }
 
             img {
-                width: 200px;
-                height: 200px;
+                width: 50%;
                 padding: 10px;
+                position: absolute;
+                bottom: -55px;
+                border-radius: 50%;
+                left: 25%;
             }
 
             .company-info{
-                text-align: center;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                width: 100%;
+                margin-top: 80px;
 
                 h2{
                     padding: 10px;
+                    text-align: center;
                 }
 
-                h4{
+                p{
                     margin-bottom: 10px;
                 }
-            }
+            }    
         }
     }
-
-
+        
     .btn-wrap{
         display: flex;
-        justify-content: space-between;
+        justify-content:space-between;
         margin-top: 25px;
+        width: 100%;
+        padding-top: 20px;
+        padding-bottom: 50px;
 
         button{
-            padding: 8px;
+            padding: 5px 10px;
             border-radius: $border-radius;
-            background-color: orangered;
+            background-color: #6ccebc;
+            border: none;
+            color: white;
+            cursor: pointer;
+            transition: all .3s;
+
+            &:hover{
+                background-color: #7ae9d4;
+            }
         }
     }
 }
