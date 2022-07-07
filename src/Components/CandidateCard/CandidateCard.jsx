@@ -11,8 +11,8 @@ function CandidateCard (props) {
     return <div id="candidate-card">
         <div className="flex">
             <img src={props.podaci.avatar} alt="user" />
-            
         </div>
+
         <div className="wrap-info">
             <h2>{props.podaci.name}</h2>
             <h4>{props.podaci.education}</h4>
