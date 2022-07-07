@@ -28,7 +28,7 @@ function ReportsPage(props) {
   };
 
   const searchedReports = searchValue
-    ? reports.filter((report) => report.candidateName.includes(searchValue))
+    ? reports.filter((report) => report.candidateName.toLowerCase().includes(searchValue.toLowerCase()))
     : reports;
 
   if (!reports) return null;

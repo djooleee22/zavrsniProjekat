@@ -8,6 +8,7 @@ function SelectCandidate(props) {
   const candidates = useContext(appCtx).candidatesList;
   const setCandidateSelected = useContext(crpCtx).setCandidateSelected;
   const candidateSelected = useContext(crpCtx).candidateSelected;
+  const goToCompany = useContext(crpCtx).goToCompany;
 
   const { candidatesList } = useContext(appCtx);
   const [searchValue, setSearchValue] = useState("");
@@ -22,7 +23,7 @@ function SelectCandidate(props) {
           candidate.name.toLowerCase().includes(searchValue.toLowerCase())
         )
       : candidatesList;
-
+console.log()
   return (
     <div id="select-candidate">
       <div className="flex-wrap">
@@ -35,32 +36,16 @@ function SelectCandidate(props) {
         />
       </div>
 
-      <div className="card-wrapper">
+      <div className="card-wrapper candidate-card">
         {searchedCandidates().map((el) => (
-          <CandidateCard podaci={el} />
+          <CandidateCard podaci={el} setCandidateSelected={setCandidateSelected}
+          />
         ))}
       </div>
 
-      {/*<div className="card-wrapper">
-        {candidates.map((el) => (
-          <div
-            onClick={() => {
-              setCandidateSelected(el);
-            }}
-            className="card"
-          >
-            <div className="flex">
-              <img src={el.avatar} alt="user" />
-              <h2>{el.name}</h2>
-            </div>
-            <div className="wrap-info">
-              <h4>{el.education}</h4>
-              <p>{el.email}</p>
-            </div>
-          </div>
-        ))}
-        </div>*/}
-      <button className="btn">Next</button>
+      <button onClick={goToCompany} className="btn">
+        Next
+      </button>
     </div>
   );
 }

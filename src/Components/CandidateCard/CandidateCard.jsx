@@ -8,11 +8,11 @@ function CandidateCard (props) {
 
     //console.log(data);
     if(!props.podaci) return null;
-    return <div id="candidate-card">
+    return <div id="candidate-card" onClick={()=>props.setCandidateSelected(props.podaci)}>
         <div className="flex">
             <img src={props.podaci.avatar} alt="user" />
-            
         </div>
+
         <div className="wrap-info">
             <h2>{props.podaci.name}</h2>
             <h4>{props.podaci.education}</h4>

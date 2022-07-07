@@ -1,7 +1,41 @@
-import React from "react";
+import React, { useContext, useState } from "react";
 import "./fillReport.scss";
+import {crpCtx} from "../context";
+import {appCtx} from "../context";
 
 function FillReport(props) {
+  const backToCompany = useContext(crpCtx).backToCompany;
+  const [interviewDate, setInterviewDate] = useState("");
+  const [phase, setPhase] = useState("");
+  const [status, setStatus] = useState("");
+  const [note, setNote] = useState("");
+  const candidate = useContext(crpCtx).candidateSelected;
+  const company = useContext(crpCtx).companySelected;
+  const token = useContext(appCtx).token;
+  const afterSubmit = useContext(crpCtx).afterSubmit
+  const setRefresh = useContext(appCtx).setRefresh;
+  const refresh = useContext(appCtx).refresh;
+
+  console.log(interviewDate);
+
+  function submitForm() {
+    fetch("http://localhost:3333/api/reports", {
+      method: "POST",
+      body: JSON.stringify({"candidateId": candidate.id,
+      "candidateName": candidate.name,
+      "companyId": company.id,
+      "companyName": company.name,
+      "interviewDate": interviewDate,
+      "phase": phase,
+      "status": status,
+      "note": note
+    }), 
+    headers: { Authorization: `Bearer ${token}`,
+    "Content-Type": "application/json"
+  }
+    })
+  }
+
   return (
     <div id="fill-report">
       <div className="flex-wrap">
@@ -11,36 +45,43 @@ function FillReport(props) {
       <div className="form">
         <label className="fill-label">
           Interview date:
-          <select name="interview-date" id="interview-date">
-            <option value="4/22/2012">21.02.2022</option>
-            <option value="4/22/2012"></option>
-            <option value="4/22/2012"></option>
-            <option value="4/22/2012"></option>
-          </select>
+          <input onChange={(e)=>{
+            setInterviewDate(e.target.value)
+          }} type="date" />
         </label>
         <label className="fill-label">
           Phase:
-          <select name="phase" id="phase">
-            <option value="4/22/2012">CV</option>
-            <option value="4/22/2012">HR</option>
-            <option value="4/22/2012">TECH</option>
-            <option value="4/22/2012">FINAL</option>
+          <select onChange={(e)=>{
+            setPhase(e.target.value)
+          }} name="phase" id="phase">
+            <option>Please select</option>
+            <option value="cv">cv</option>
+            <option value="hr">hr</option>
+            <option value="tech">tech</option>
+            <option value="final">final</option>
           </select>
         </label>
         <label className="fill-label">
           Status:
-          <select name="status" id="status">
-            <option value="4/22/2012">Passed</option>
-            <option value="4/22/2012">Declined</option>
+          <select onChange={(e)=>{
+            setStatus(e.target.value)
+          }} name="status" id="status">
+            <option>Please select</option>
+            <option value="passed">passed</option>
+            <option value="declined">declined</option>
           </select>
         </label>
         <p>Note:</p>
-        <textarea name="" id="" cols="50" rows="20"></textarea>
+        <textarea onChange={(e)=>setNote(e.target.value)} name="" id="" cols="50" rows="20"></textarea>
       </div>
 
       <div className="btn-wrap">
-        <button className="back-btn">Back</button>
-        <button className="submit-btn">Submit</button>
+        <button onClick={backToCompany} className="back-btn">Back</button>
+        <button onClick={()=>{
+          submitForm()
+          afterSubmit()
+          setRefresh(!refresh)
+          }} className="submit-btn">Submit</button>
       </div>
     </div>
   );
