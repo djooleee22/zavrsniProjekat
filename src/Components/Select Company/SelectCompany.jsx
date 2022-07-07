@@ -7,7 +7,7 @@ import logo2 from "../../images/companies/logo2.jpg";
 import logo3 from "../../images/companies/logo3.webp";
 import logo4 from "../../images/companies/logo4.jpg";
 import logo5 from "../../images/companies/logo5.webp";
-import logo6 from '../../images/companies/logo6.jpg'
+import logo6 from '../../images/companies/logo6.jpg';
 
 const Images = [
   logo1,
