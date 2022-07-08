@@ -11,7 +11,7 @@ $border-radius: 5px;
         color: white;
         display: flex;
         justify-content: center;
-        margin-bottom: 50px;
+        margin-top: 50px;
 
         input{
             padding: 10px;
@@ -21,7 +21,12 @@ $border-radius: 5px;
             outline: none;
             border-radius: 8px;
         }
-        
+    }
+    .step {
+        color: white;
+        display: flex;
+        justify-content: center;
+        margin: 50px 0;
     }
     .company-wrapper{
         display: flex;
@@ -75,7 +80,10 @@ $border-radius: 5px;
                 p{
                     margin-bottom: 10px;
                 }
-            }    
+            }   
+            &:active{
+                border: 5px solid grey;
+            } 
         }
     }
         
@@ -116,4 +124,5 @@ $border-radius: 5px;
                 }
         }
     }
+   
 }

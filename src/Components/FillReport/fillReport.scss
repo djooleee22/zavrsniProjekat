@@ -1,6 +1,12 @@
 #fill-report{
         width: 60%;
         margin: 0 auto;
+        h2 {
+            color: white;
+            margin: 50px 0;
+            display: flex;
+            justify-content: center;
+        }
     
         .flex-wrap {
             
@@ -90,8 +96,5 @@
             outline: none;
             word-break: break-all;
          }
-         h2{
-            color: white;
-         }  
          }
     

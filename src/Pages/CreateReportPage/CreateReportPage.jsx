@@ -23,14 +23,17 @@ function CreateReportPage(props){
 
     function goToReportFill(){
         if(companySelected) history.push("/create-report-page/fill-report");
+        window.scroll(0,0)
     }
 
     function backToCandidate(){
         history.push("/create-report-page");
+        window.scroll(0,0)
     }
 
     function backToCompany(){
         history.push("/create-report-page/select-company");
+        window.scroll(0,0)
     }
 
 
@@ -39,11 +42,6 @@ function CreateReportPage(props){
         <Header/>
         <CrpProvider value={{candidateSelected,setCandidateSelected,companySelected,setCompanySelected, goToCompany,goToReportFill, backToCandidate,backToCompany,afterSubmit, }}>
         <div className="main">
-            <div className="buttons">
-                <div className="options">Select Candidate</div>
-                <div className="options">Select Company</div>
-                <div className="options">Fill Report</div>
-            </div>
         <Switch>
             <Route exact path="/create-report-page"><SelectCandidate/></Route>
             <Route path="/create-report-page/select-company"><SelectCompany/></Route>

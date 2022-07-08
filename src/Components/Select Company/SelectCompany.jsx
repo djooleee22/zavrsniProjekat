@@ -33,6 +33,7 @@ function SelectCompany(props) {
 
   return (
     <div id="select-company">
+      
       <div className="flex-wrap">
         <input
           type="text"
@@ -41,6 +42,7 @@ function SelectCompany(props) {
           placeholder="Search.."
         />
       </div>
+      <h2 className="step">Step 2: Select Company</h2>
 
       <div className="company-wrapper">
         {searchedCompanies().map((el, index) => (

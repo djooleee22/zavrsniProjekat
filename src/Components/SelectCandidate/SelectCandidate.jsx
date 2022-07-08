@@ -25,6 +25,7 @@ function SelectCandidate(props) {
 
   return (
     <div id="select-candidate">
+      
       <div className="flex-wrap">
         <input
           type="text"
@@ -33,6 +34,7 @@ function SelectCandidate(props) {
           placeholder="Search.."
         />
       </div>
+      <h2 className="step">Step 1: Select Candidate</h2>
 
       <div className="candidate-card">
         {searchedCandidates().map((el, index) => (

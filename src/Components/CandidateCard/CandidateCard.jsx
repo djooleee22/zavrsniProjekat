@@ -5,9 +5,10 @@ import {Link} from "react-router-dom"
 function CandidateCard (props) {
 
     if(!props.podaci) return null;
-    return <div id="candidate-card" onClick={()=>{
+    return <div id="candidate-card" onClick={(e)=>{
         props.setNext(!props.next)
-        props.setCandidateSelected(props.podaci)}}>
+        props.setCandidateSelected(props.podaci)
+        }}>
         <div className="flex">
             <img src={props.podaci.avatar} alt="user" />
         </div>

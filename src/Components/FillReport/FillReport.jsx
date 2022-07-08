@@ -40,6 +40,7 @@ function FillReport(props) {
 
   return (
     <div id="fill-report">
+      <h2>Step 3: Fill Report</h2>
       <div className="flex-wrap">
       </div>
 
@@ -82,6 +83,7 @@ function FillReport(props) {
           submitForm()
           afterSubmit()
           setRefresh(!refresh)
+          window.scroll(0,0)
           }} className="submit-btn">Submit</button>
       </div>
     </div>

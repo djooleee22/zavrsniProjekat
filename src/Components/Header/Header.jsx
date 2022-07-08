@@ -16,7 +16,10 @@ function Header () {
             <Link to="/home-page">Home</Link>
             <Link to="/reports-page">Reports</Link>
             <Link to="/create-report-page">Create Report</Link>
-            <button onClick={()=> setToken("")}>Log Out</button>
+            <button onClick={()=> {
+                setToken("")
+                localStorage.clear()
+        }}>Log Out</button>
         </div>
     </div>
 }
