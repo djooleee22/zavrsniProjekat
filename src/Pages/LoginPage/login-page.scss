@@ -71,6 +71,14 @@ $roze: #CE6C7E;
                     text-transform: capitalize;
                     font-size: 28px;
                 }
+
+                .error-field {
+                    position: relative;
+                    font-size: 13px;
+                    width: 80%;
+                    margin: 18px auto;
+                    color: red;
+                }
     
                 .text-field{
                     border-bottom: 2px solid white;
