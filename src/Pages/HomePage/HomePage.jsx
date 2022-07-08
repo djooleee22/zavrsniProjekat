@@ -13,12 +13,17 @@ function HomePage(props) {
     setSearchValue(event.target.value);
   };
 
-  const searchedCandidates = () =>
-    searchValue
-      ? candidatesList.filter((candidate) =>
-          candidate.name.toLowerCase().includes(searchValue.toLowerCase())
-        )
-      : candidatesList;
+  const searched = searchValue ? candidatesList.filter((candidate) =>
+  candidate.name.toLowerCase().includes(searchValue.toLowerCase())
+)
+: candidatesList;
+
+  // const searchedCandidates = () =>
+  //   searchValue
+  //     ? candidatesList.filter((candidate) =>
+  //         candidate.name.toLowerCase().includes(searchValue.toLowerCase())
+  //       )
+  //     : candidatesList;
 
   return (
     <div id="home-page">
@@ -34,7 +39,7 @@ function HomePage(props) {
 
 
       <div className="grid-wrapper">
-        {searchedCandidates().map((el) => (
+        {searched.map((el) => (
           <CandidateCard podaci={el} />
         ))}
       </div>
