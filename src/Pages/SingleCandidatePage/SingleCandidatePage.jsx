@@ -6,6 +6,7 @@ import {appCtx} from "../../Components/context";
 import {useParams, useRouteMatch} from "react-router-dom";
 import moment from "moment";
 import Modal from "../../Components/Modal/Modal";
+import {Link} from "react-router-dom"
 
 function SingleCandidatePage (){
     const candidates = useContext(appCtx).candidatesList;
@@ -63,6 +64,7 @@ function SingleCandidatePage (){
                             }} className="view-btn">View</button></span>
                         </div>)}
                     </div>
+                    <Link to="/home-page" className="back-btn">Back To Home</Link>
             </div>
         {modalOpen && <Modal/>} 
         </div>

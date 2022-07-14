@@ -6,12 +6,13 @@ import { crpCtx } from "../context";
 
 function SelectCandidate(props) {
   const setCandidateSelected = useContext(crpCtx).setCandidateSelected;
+  const candidateSelected = useContext(crpCtx).candidateSelected
   const goToCompany = useContext(crpCtx).goToCompany;
 
   const { candidatesList } = useContext(appCtx);
   const [searchValue, setSearchValue] = useState("");
   const [next, setNext] = useState(false);
-
+ 
   const handleSearch = (event) => {
     setSearchValue(event.target.value);
   };
@@ -38,13 +39,13 @@ function SelectCandidate(props) {
 
       <div className="candidate-card">
         {searchedCandidates().map((el, index) => (
-          <CandidateCard key={index} podaci={el} setNext={setNext} next={next} setCandidateSelected={setCandidateSelected}
+          <CandidateCard key={index} podaci={el} selected={el.id === candidateSelected.id ? true : false} setNext={setNext} next={next} setCandidateSelected={setCandidateSelected}
           />
         ))}
       </div>
 
           <div className="btn-wrap">
-      <button onClick={goToCompany} className={next ? "btn active" : "btn"}>
+      <button onClick={next ? goToCompany : ""} className={next ? "btn active" : "btn"}>
         Next
       </button>
       </div>

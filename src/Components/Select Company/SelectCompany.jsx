@@ -14,6 +14,7 @@ const Logos = [logo1, logo2, logo3, logo4, logo5, logo6];
 function SelectCompany(props) {
   const companyData = useContext(appCtx).companiesList;
   const setCompany = useContext(crpCtx).setCompanySelected;
+  const companySelected = useContext(crpCtx).companySelected;
   const goToReportFill = useContext(crpCtx).goToReportFill;
   const backToCandidate = useContext(crpCtx).backToCandidate;
   const [searchValue, setSearchValue] = useState("");
@@ -46,13 +47,12 @@ function SelectCompany(props) {
 
       <div className="company-wrapper">
         {searchedCompanies().map((el, index) => (
-           <div
+           <div className={companySelected.id === el.id ? "company-card active" : "company-card"}
             key={index}
             onClick={() => {
               setCompany(el);
-              setNext(!next)
+              setNext(true)
             }}
-            className="company-card"
           >
             <div className="green">
               <img src={Logos[index]} alt="slika" />
@@ -69,7 +69,7 @@ function SelectCompany(props) {
         <button onClick={backToCandidate} className="prev">
           Back
         </button>
-        <button onClick={goToReportFill} className={next ? "active next" : "next"}>
+        <button onClick={next ? goToReportFill : ""} className={next ? "active next" : "next"}>
           Next
         </button>
       </div>

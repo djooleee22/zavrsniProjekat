@@ -5,8 +5,8 @@ import {Link} from "react-router-dom"
 function CandidateCard (props) {
 
     if(!props.podaci) return null;
-    return <div id="candidate-card" onClick={(e)=>{
-        props.setNext(!props.next)
+    return <div id="candidate-card" className={props.selected ? "active" : ""} onClick={(e)=>{
+        props.setNext(true)
         props.setCandidateSelected(props.podaci)
         }}>
         <div className="flex">
